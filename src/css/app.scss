@@ -20,7 +20,7 @@ $min-width: 28rem;
 a {
   text-decoration: none;
 
-  &:visited {
+  &:visited, &:link {
     color: inherit;
   }
 }
@@ -72,6 +72,10 @@ html, body {
   font-size: $font-l;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .green {
   color: $color-green;
 }
@@ -98,12 +102,10 @@ html, body {
 
     .company {
       font-weight: 600;
-      font-style: italic;
       font-size: 3.2rem;
     }
 
     .name {
-      font-style: italic;
       font-size: 1.8rem;
       color: $color-grey-3;
       margin-top: 1rem;
@@ -154,7 +156,6 @@ html, body {
 
   text-align: center;
   padding: 3rem;
-  font-style: italic;
 
   .symbol2 {
     width: 7rem;
@@ -180,11 +181,24 @@ html, body {
 
 .gallery {
   background-color: #f1f3e6;
-  padding-bottom: 3rem;
+  padding: 3rem 1rem 2rem 1rem;
+
+  .images {
+    max-width: 108rem;
+  }
+
+  .back {
+    text-transform: uppercase;
+  }
+}
+
+.gallery-links {
+  background-color: #f1f3e6;
+  padding: 1rem 0 3rem 0;
 
   .hr--title {
     @include hr-label(#f1f3e6);
-    padding: 3rem 0 2rem 0;
+    padding: 2rem 0 2rem 0;
   }
 
   .row {
