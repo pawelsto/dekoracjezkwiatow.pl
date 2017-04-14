@@ -1,0 +1,257 @@
+/*
+https://autoprefixer.github.io
+*/
+
+$color-green: #96c426;
+$color-grey-1: #3a3a3a;
+$color-grey-3: #656565;
+$color-grey-5: #c5c5c5;
+
+$base-size: 12px;
+$font-m: 1.5rem;
+$font-l: 2rem;
+
+$min-width: 28rem;
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+html, body {
+  font-family: abril-text, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $base-size;
+  flex-wrap: wrap;
+}
+
+@mixin hr-label($background-color: white) {
+
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  &::before {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80%;
+    content: '';
+    z-index: -1;
+  }
+
+  .hr-label {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: $background-color;
+    text-transform: uppercase;
+    font-size: $font-m;
+    font-weight: 700;
+    color: rgba(36, 36, 36, 0.8);
+  }
+}
+
+.font-m {
+  font-size: $font-m;
+}
+
+.font-l {
+  font-size: $font-l;
+}
+
+.green {
+  color: $color-green;
+}
+
+.head-1 {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+
+  .logo {
+
+    background-color: white;
+    box-shadow: 0 0 3.8rem 0.5rem rgba(0, 0, 0, 0.1);
+    min-width: $min-width;
+    flex: 1 1 auto;
+    padding: 0 0.2rem 0.2rem 0.2rem;
+
+    .border {
+      padding: 3rem;
+      border-right: 1px solid $color-grey-5;
+      border-bottom: 1px solid $color-grey-5;
+      border-left: 1px solid $color-grey-5;
+    }
+
+    .company {
+      font-weight: 600;
+      font-style: italic;
+      font-size: 3.2rem;
+    }
+
+    .name {
+      font-style: italic;
+      font-size: 1.8rem;
+      color: $color-grey-3;
+      margin-top: 1rem;
+
+      &:before, &:after {
+        content: "";
+        background: url("../img/symbol1.svg") no-repeat;
+        background-size: cover;
+        display: inline-block;
+        width: 46px;
+        height: 21px;
+        margin: 0 1rem
+      }
+
+      &:after {
+        transform: scaleX(-1);
+      }
+    }
+
+  }
+
+  .phone {
+    background-color: $color-grey-1;
+    line-height: 4.25rem;
+    color: #f2f2f2;
+    padding: 0 1rem;
+    flex: 1 1 auto;
+    min-width: $min-width;
+  }
+
+  .mail {
+    background-color: $color-grey-1;
+    line-height: 4.25rem;
+    padding: 0 1rem;
+    flex: 1 1 auto;
+    min-width: $min-width;
+  }
+}
+
+.slideshow {
+  img {
+    width: 100%;
+    min-width: $min-width;
+  }
+}
+
+.story {
+
+  text-align: center;
+  padding: 3rem;
+  font-style: italic;
+
+  .symbol2 {
+    width: 7rem;
+  }
+
+  p {
+    line-height: 3rem;
+    color: rgba(36, 36, 36, 0.8);
+    font-weight: 600;
+    margin: 3rem auto;
+    max-width: 80rem;
+  }
+
+  .kontakt {
+    display: inline-block;
+    background-color: $color-green;
+    color: white;
+    font-size: 1.67rem;
+    padding: 1.2rem 3rem;
+    border-radius: 2rem;
+  }
+}
+
+.gallery {
+  background-color: #f1f3e6;
+  padding-bottom: 3rem;
+
+  .hr--title {
+    @include hr-label(#f1f3e6);
+    padding: 3rem 0 2rem 0;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: $min-width;
+
+    .category {
+      flex: 0 0 auto;
+      margin: 1rem;
+      box-shadow: 0 0 3.8rem 0.5rem rgba(0, 0, 0, 0.15);
+
+      img {
+        display: block;
+      }
+
+      .name {
+        font-size: $font-l;
+        font-style: italic;
+        padding: 1rem 1.5rem;
+        background-color: white;
+      }
+    }
+  }
+}
+
+.contact {
+
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .address {
+
+    .border {
+      padding: 1rem 0;
+      border-bottom: 1px solid #f1f3e6;
+    }
+
+    .phone-home {
+      margin-bottom: 3rem;
+    }
+
+    .company-name {
+      font-weight: 700;
+    }
+
+    .company-address {
+      margin-bottom: 1.5rem;
+    }
+
+    .company-alias {
+      color: #828282;
+    }
+  }
+
+  .map {
+    padding: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .head-1 {
+    //flex-flow: row;
+  }
+}
+
