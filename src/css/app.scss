@@ -11,7 +11,7 @@ $base-size: 12px;
 $font-m: 1.5rem;
 $font-l: 2rem;
 
-$min-width: 28rem;
+$min-width: 26rem;
 
 * {
   box-sizing: border-box;
@@ -31,6 +31,7 @@ html, body {
   font-weight: 400;
   font-size: $base-size;
   flex-wrap: wrap;
+  //min-width: $min-width;
 }
 
 @mixin hr-label($background-color: white) {
@@ -89,9 +90,9 @@ html, body {
 
     background-color: white;
     box-shadow: 0 0 3.8rem 0.5rem rgba(0, 0, 0, 0.1);
-    min-width: $min-width;
+
     flex: 1 1 auto;
-    padding: 0 0.2rem 0.2rem 0.2rem;
+    padding: 0 0.4rem 0.4rem 0.4rem;
 
     .border {
       padding: 3rem;
@@ -133,7 +134,6 @@ html, body {
     color: #f2f2f2;
     padding: 0 1rem;
     flex: 1 1 auto;
-    min-width: $min-width;
   }
 
   .mail {
@@ -141,14 +141,12 @@ html, body {
     line-height: 4.25rem;
     padding: 0 1rem;
     flex: 1 1 auto;
-    min-width: $min-width;
   }
 }
 
 .slideshow {
   img {
     width: 100%;
-    min-width: $min-width;
   }
 }
 
@@ -181,10 +179,18 @@ html, body {
 
 .gallery {
   background-color: #f1f3e6;
-  padding: 3rem 1rem 2rem 1rem;
+  padding: 3rem 2rem 2rem 2rem;
 
   .images {
-    max-width: 108rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      margin: 1rem;
+      box-shadow: 0 0 3.8rem 0.5rem rgba(0, 0, 0, 0.15);
+      width: 100%;
+    }
   }
 
   .back {
@@ -205,7 +211,6 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: $min-width;
 
     .category {
       flex: 0 0 auto;
@@ -214,6 +219,7 @@ html, body {
 
       img {
         display: block;
+        width: 100%;
       }
 
       .name {
@@ -258,7 +264,7 @@ html, body {
   }
 
   .map {
-    padding: 3rem;
+    padding: 3rem 0;
   }
 }
 
@@ -266,6 +272,12 @@ html, body {
 
   .head-1 {
     //flex-flow: row;
+  }
+
+  .gallery {
+    .images {
+      max-width: 108rem;
+    }
   }
 }
 
