@@ -7,11 +7,13 @@ $color-grey-1: #3a3a3a;
 $color-grey-3: #656565;
 $color-grey-5: #c5c5c5;
 
+$base-size-mobile: 10px;
 $base-size: 12px;
 $font-m: 1.5rem;
 $font-l: 2rem;
 
 $min-width: 26rem;
+$max-width: calc((2rem + 320px) * 4);
 
 * {
   box-sizing: border-box;
@@ -29,9 +31,10 @@ html, body {
   font-family: abril-text, serif;
   font-style: normal;
   font-weight: 400;
-  font-size: $base-size;
+  font-size: $base-size-mobile;
   flex-wrap: wrap;
-  //min-width: $min-width;
+  margin: 0;
+  padding: 0;
 }
 
 @mixin hr-label($background-color: white) {
@@ -90,8 +93,6 @@ html, body {
 
     background-color: white;
     box-shadow: 0 0 3.8rem 0.5rem rgba(0, 0, 0, 0.1);
-
-    flex: 1 1 auto;
     padding: 0 0.4rem 0.4rem 0.4rem;
 
     .border {
@@ -104,12 +105,13 @@ html, body {
     .company {
       font-weight: 600;
       font-size: 3.2rem;
+      line-height: 3.2rem;
     }
 
     .name {
       font-size: 1.8rem;
+      line-height: 3.2rem;
       color: $color-grey-3;
-      margin-top: 1rem;
 
       &:before, &:after {
         content: "";
@@ -133,20 +135,21 @@ html, body {
     line-height: 4.25rem;
     color: #f2f2f2;
     padding: 0 1rem;
-    flex: 1 1 auto;
+    flex: 1 1 10%;
   }
 
   .mail {
     background-color: $color-grey-1;
     line-height: 4.25rem;
     padding: 0 1rem;
-    flex: 1 1 auto;
+    flex: 1 1 10%;
   }
 }
 
 .slideshow {
   img {
     width: 100%;
+    display: block;
   }
 }
 
@@ -179,23 +182,36 @@ html, body {
 
 .gallery {
   background-color: #f1f3e6;
-  padding: 3rem 2rem 2rem 2rem;
+  padding: 3rem 0 2rem 0;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  .title {
+    padding: 0 1rem;
+  }
 
   .images {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
 
     img {
       margin: 1rem;
       box-shadow: 0 0 3.8rem 0.5rem rgba(0, 0, 0, 0.15);
       width: 100%;
+      max-width: 401px;
     }
-  }
 
+  }
   .back {
+    padding: 0 1rem;
     text-transform: uppercase;
   }
+
 }
 
 .gallery-links {
@@ -208,9 +224,12 @@ html, body {
   }
 
   .row {
+    max-width: $max-width;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 
     .category {
       flex: 0 0 auto;
@@ -234,10 +253,12 @@ html, body {
 
 .contact {
 
-  padding: 3rem 0;
+  padding: 4rem 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: $max-width;
 
   .address {
 
@@ -264,20 +285,79 @@ html, body {
   }
 
   .map {
-    padding: 3rem 0;
+    flex: 0 1 50%;
+
+    iframe {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
 }
 
 @media only screen and (min-width: 1024px) {
 
+  html, body {
+    font-size: $base-size;
+  }
+
   .head-1 {
-    //flex-flow: row;
+    flex-flow: row;
+    align-items: flex-start;
+
+    .phone {
+      order: 1;
+      text-align: right;
+    }
+
+    .logo {
+      order: 2;
+      z-index: 100;
+    }
+
+    .mail {
+      order: 2;
+      text-align: left;
+    }
+  }
+
+  .slideshow {
+    margin-top: calc(4.25rem - 0.4rem - 6rem - 3.2rem - 3.2rem - 1px);
+  }
+
+  .gallery-links {
+    .row {
+      flex-direction: row;
+      flex-flow: wrap;
+
+    }
   }
 
   .gallery {
+
+    padding: 3rem 2rem 2rem 2rem;
+
     .images {
-      max-width: 108rem;
+      img {
+        width: auto;
+      }
     }
+  }
+
+  .contact {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
   }
 }
 
+@media only screen and (max-width: 420px) {
+  .head-1 {
+    .logo {
+      .name {
+        &:before, &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
