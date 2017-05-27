@@ -5,7 +5,7 @@
       <paths name="gardenia">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/src" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$/" web="/" />
           </mappings>
         </serverdata>
       </paths>

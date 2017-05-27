@@ -108,7 +108,7 @@ html, body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center; }
+    justify-content: center; }
     .gallery .images img {
       margin: 1rem;
       box-shadow: 0 0 3.8rem 0.5rem rgba(0, 0, 0, 0.15);
@@ -167,7 +167,7 @@ html, body {
         background-color: white; }
 
 .contact {
-  padding: 4rem 0;
+  padding: 4rem 1rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -226,5 +226,15 @@ html, body {
 @media only screen and (max-width: 420px) {
   .head-1 .logo .name:before, .head-1 .logo .name:after {
     display: none; } }
+#imagelightbox {
+  cursor: pointer;
+  position: fixed;
+  z-index: 10000;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75);
+  /* 50 */
+  box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75);
+  /* 50 */ }
 
 /*# sourceMappingURL=app.css.map */

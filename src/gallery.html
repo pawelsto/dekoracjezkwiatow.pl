@@ -16,9 +16,9 @@
   <script src="https://use.typekit.net/lgm5nxq.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <script src="js/jquery-3.2.0.min.js"></script>
+  <script src="js/imagelightbox.js"></script>
   <script src="js/app.js?v=1"></script>
 </head>
-
 
 <body>
 <div class="head-1 font-m">
@@ -38,10 +38,11 @@
   <div class="container">
     <div class="font-l italic title">Dynamiczna nazwa</div>
     <div class="images">
-      <img src="img/images/1.png"/>
-      <img src="img/images/2.png"/>
-      <img src="img/images/1.png"/>
-      <img src="img/images/2.png"/>
+      <a href="img/images/1.png" data-lightbox="true"><img src="img/images/1.png"/></a>
+      <a href="img/images/2.png" class="lightbox"><img src="img/images/2.png"/></a>
+      <a href="img/images/1.png" class="lightbox"><img src="img/images/1.png"/></a>
+      <a href="img/images/2.png" class="lightbox"><img src="img/images/2.png"/></a>
+      <a href="img/images/1.png" class="lightbox"><img src="img/images/1.png"/></a>
     </div>
     <a href="index.html" class="back font-m">❮ Powrót</a>
   </div>
@@ -65,34 +66,6 @@
   </div>
 </div>
 <script>
-//    window.fbAsyncInit = function () {
-//        FB.init({
-//            appId: '876741209134344',
-//            xfbml: true,
-//            version: 'v2.8'
-//        });
-//        FB.AppEvents.logPageView();
-//        FB.api(
-//            "/402623550103809/albums",
-//            function (response) {
-//                if (response && !response.error) {
-//                    document.body.innerHTML += response;
-//                  /* handle the result */
-//                }
-//            }
-//        );
-//    };
-//
-//    (function (d, s, id) {
-//        var js, fjs = d.getElementsByTagName(s)[0];
-//        if (d.getElementById(id)) {
-//            return;
-//        }
-//        js = d.createElement(s);
-//        js.id = id;
-//        js.src = "//connect.facebook.net/en_US/sdk.js";
-//        fjs.parentNode.insertBefore(js, fjs);
-//    }(document, 'script', 'facebook-jssdk'));
 </script>
 </body>
 </html>

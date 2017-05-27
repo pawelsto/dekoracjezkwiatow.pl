@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="3837bd7f-b749-4086-a905-ea2fd40bb0d4" name="gardenia" url="http://home346587602.1and1-data.host">
-        <fileTransfer host="home346587602.1and1-data.host" port="22" rootFolder="/new" accessType="SFTP">
+      <webServer id="3837bd7f-b749-4086-a905-ea2fd40bb0d4" name="gardenia" url="http://dokoracjezkwiatow.pl">
+        <fileTransfer host="home346587602.1and1-data.host" port="22" rootFolder="/root" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
