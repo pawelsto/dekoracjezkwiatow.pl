@@ -1,0 +1,3 @@
+<files "conf/*.ini">
+    deny from all
+</files>
